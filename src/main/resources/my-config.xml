@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="inner" class="springPack.InnerClass">
+        <property name="innerMessage" value="Inner!!!!"/>
+    </bean>
+<!--    <bean id="aaa" class="springPack.SpringHelloWorld" scope="prototype">-->
+    <bean id="aaa" class="springPack.SpringHelloWorld"><!-- singltone по умолчанию-->
+        <property name="innerClass" ref="inner"/>
+        <property name="massage" value="TEST!!!!"/>
+    </bean>
+
+
+
+<!--    <bean id="task1" class="com.teachmeskills.lesson39.Task">-->
+<!--        <property name="name" value="TASK1"/>-->
+<!--        <property name="listSubTask">-->
+<!--            <list>-->
+<!--                <ref bean="subTask1"/>-->
+<!--                <ref bean="subTask2"/>-->
+<!--                <ref bean="subTask3"/>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+</beans>
