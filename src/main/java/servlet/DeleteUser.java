@@ -39,7 +39,6 @@ public class DeleteUser extends HttpServlet {
             // Удаление пользователя в репозитории
             userRepository.deleteUser(idUser);
             // Перенаправление на страницу со списком пользователей
-//            response.sendRedirect(request.getContextPath() + "/WEB-INF/start.jsp");
             response.sendRedirect(request.getContextPath() + "/show-user");
 //            getServletContext().getRequestDispatcher("/WEB-INF/test.jsp").forward(request, response);
 
