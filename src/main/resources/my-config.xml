@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+<bean id="task" class="homWork.Task">
+        <property name="name" value="Pasha!!!!"/>
+    </bean>
+    <bean id="task2" class="homWork.Task">
+        <property name="name" value="Oleg!!!!"/>
+    </bean>
+    <bean id="task3" class="homWork.Task">
+        <property name="name" value="Ilya!!!!"/>
+    </bean>
+    <bean id="subTask" class="homWork.SubTask">
+        <property name="name" value="Sanya!!!!"/>
+        <property name="taskList">
+            <list>
+                <ref bean="task"/>
+                <ref bean="task2"/>
+                <ref bean="task3"/>
+            </list>
+        </property>
+    </bean>
+</beans>

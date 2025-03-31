@@ -6,12 +6,26 @@
 
     <groupId>org.HomeWork</groupId>
     <artifactId>TeachMeSkills_HM_Pavel</artifactId>
-    <version>1.0-SNAPSHOT</version>
+
+    <packaging>war</packaging>
+    <version>1.0</version>
+    <name>TeachMeSkills_HM_Pavel Maven Webapp</name>
 
     <properties>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.24</version>
+        </dependency>
+
+    </dependencies>
 
 </project>
