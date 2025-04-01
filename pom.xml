@@ -8,27 +8,35 @@
     <artifactId>TeachMeSkills_HM_Pavel</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <maven.compiler.source>22</maven.compiler.source>
-        <maven.compiler.target>22</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
+    <packaging>war</packaging>
+
+    <name>TeachMeSkills_HM_Pavel Maven Webapp</name>
+
+    <properties>
+        <spring.version>5.3.24</spring.version>
+    </properties>
     <dependencies>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>5.3.24</version>
         </dependency>
+        <!--    AspectJ dependency    -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
-            <version>5.3.24</version>
+            <version>${spring.version}</version>
         </dependency>
+
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aspects</artifactId>
-            <version>5.3.24</version>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.22</version>
         </dependency>
     </dependencies>
+    <build>
+        <finalName>TeachMeSkills_HM_Pavel</finalName>
+    </build>
 </project>
