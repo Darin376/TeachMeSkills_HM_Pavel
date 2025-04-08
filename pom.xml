@@ -16,26 +16,95 @@
         <spring.version>5.3.24</spring.version>
     </properties>
     <dependencies>
-
+        <!-- Spring Framework -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.3.24</version>
+            <version>6.1.5</version>
         </dependency>
-        <!--    AspectJ dependency    -->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-            <version>${spring.version}</version>
+            <artifactId>spring-webmvc</artifactId>
+            <version>6.1.5</version>
         </dependency>
 
+        <!-- Servlet API (используем Jakarta EE 9+) -->
         <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.9.22</version>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
         </dependency>
+
+        <!-- JSTL (Jakarta EE) -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <!-- PostgreSQL -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>  <!-- Последняя версия -->
+        </dependency>
+
+        <!-- Миграции (выберите один вариант: Liquibase ИЛИ Flyway) -->
+        <!-- Вариант 1: Liquibase -->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>4.28.0</version>
+        </dependency>
+
+        <!-- ИЛИ Вариант 2: Flyway -->
+        <!--
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>10.20.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
+            <version>10.20.0</version>
+        </dependency>
+        -->
     </dependencies>
+        <!--    AspectJ dependency    -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-aop</artifactId>-->
+<!--            <version>${spring.version}</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.aspectj</groupId>-->
+<!--            <artifactId>aspectjweaver</artifactId>-->
+<!--            <version>1.9.22</version>-->
+<!--        </dependency>-->
+
     <build>
         <finalName>TeachMeSkills_HM_Pavel</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <compilerArgs>
+                        <arg>-parameters</arg>  <!-- Включаем передачу имен параметров -->
+                    </compilerArgs>
+                    <source>22</source>  <!-- Ваша версия Java -->
+                    <target>22</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
