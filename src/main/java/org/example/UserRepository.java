@@ -1,5 +1,6 @@
-package crud;
+package org.example;
 
+import org.springframework.stereotype.Component;
 import pack.PostgresDriverManager;
 import users.User;
 
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+@Component
 public class UserRepository {
 
     private static final Logger logger = Logger.getLogger(UserRepository.class.getName());

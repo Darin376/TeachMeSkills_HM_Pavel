@@ -28,6 +28,7 @@
             <version>6.1.5</version>
         </dependency>
 
+
         <!-- Servlet API (используем Jakarta EE 9+) -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
@@ -47,7 +48,11 @@
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>3.0.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.2.0</version> <!-- Актуальная версия (можно проверить на https://spring.io/projects/spring-boot) -->
+        </dependency>
         <!-- PostgreSQL -->
         <dependency>
             <groupId>org.postgresql</groupId>

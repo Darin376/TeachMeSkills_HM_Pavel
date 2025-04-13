@@ -1,21 +1,23 @@
 package org.example;
 
-import crud.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import users.User;
 //import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 
 @RequestMapping("/hello")
 public class HelloController {
+    @Autowired
     private UserRepository userRepository;
+    List<User> allUsers;
 
     @RequestMapping("/page")
     public String page() {         //можно в скобках указать имя параметра
@@ -25,11 +27,18 @@ public class HelloController {
 
     @GetMapping("/show-users")
     public String create1(Model model) throws SQLException {
-        userRepository = new UserRepository();
-        List<User> allUsers = userRepository.getAllUsers();
+        allUsers = userRepository.getAllUsers();
         model.addAttribute("all_users", allUsers);
         return "showUser";
     }
+
+    // либо второй вариант короткий
+
+
+//    @GetMapping("/show-users")
+//    public ModelAndView create1() throws SQLException {
+//        return  new ModelAndView("show-users","all_users", allUsers = userRepository.getAllUsers());
+//    }
 
     private void validateIdParam(String idParam) {
         if (idParam == null || idParam.isEmpty()) {
@@ -62,7 +71,7 @@ public class HelloController {
     }
 
     @PostMapping("/create")
-    public String createUser(
+    public String createUser(//User user можно через класс User но с констуктором пцустым
             @RequestParam("first_name") String first_name,
             @RequestParam("last_name") String last_name,
             @RequestParam("age") String age,

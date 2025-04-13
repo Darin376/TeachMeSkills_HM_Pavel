@@ -1,14 +1,12 @@
-//import Repository.crud.UserRepository;
+//import Repository.org.example.UserRepository;
 //import Repository.users.User;
 
-import crud.UserRepository;
+import org.example.UserRepository;
 import users.User;
 
-import java.sql.Array;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 
 public class Ranner {
     public static void main(String[] args) throws SQLException {
