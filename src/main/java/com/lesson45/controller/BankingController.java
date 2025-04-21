@@ -158,3 +158,17 @@ public class BankingController {
 
 //
 //sql код для таблиц
+
+
+
+
+//
+//{
+//        "clientId": 1,
+//        "cardTo": "5168 7423 9876 5432",
+//        "cardFrom": {
+//        "cardNumber": "5536 9132 4567 1234"
+//        },
+//        "amount": 100.00
+//        }
+// post апрос json в postman
