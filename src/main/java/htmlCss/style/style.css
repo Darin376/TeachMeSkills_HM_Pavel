@@ -1,0 +1,50 @@
+.wrapper{
+    max-width:1920px;
+    height:auto;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+td{
+    padding: 25px;
+ }
+.td_img{
+    background-image: url('../icon2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 5px;
+ } 
+h1{
+    text-align: center;
+}
+.text-site{
+    font-style: italic;
+}
+.wrapper_table{
+    width: 1250px;
+    height: auto;
+     
+}
+.wrapper-text{
+    width: 1050px;
+    height: auto;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    align-items: start; 
+}
+.wrapper-p{
+    background-color: aquamarine;
+    width: 500px;
+    height: auto;
+    margin: 30px;
+    border: 3px solid red;
+}
+.text{
+    margin: 0;
+    padding: 20px;
+    color: rgb(187, 22, 173);
+}
