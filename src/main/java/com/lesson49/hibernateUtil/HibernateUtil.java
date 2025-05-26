@@ -1,7 +1,9 @@
 package com.lesson49.hibernateUtil;
 
 
+import com.lesson49.entity.Bankuser;
 import com.lesson49.entity.User;
+import com.lesson49.entity.Usercard;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -50,6 +52,8 @@ public class HibernateUtil {
             configuration.setProperty("hibernate.current_session_context_class", currentSessionContextClass);
 
             configuration.addAnnotatedClass(User.class);
+            configuration.addAnnotatedClass(Bankuser.class);
+            configuration.addAnnotatedClass(Usercard.class);
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();

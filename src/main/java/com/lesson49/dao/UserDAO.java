@@ -1,5 +1,6 @@
 package com.lesson49.dao;
 
+import com.lesson49.entity.Bankuser;
 import com.lesson49.entity.User;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface UserDAO {
     public void userSave(User user);
 
     public void deleteUser(int id);
+ 
+    public List<Bankuser> getBankUSer();
 }
