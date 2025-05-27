@@ -45,6 +45,10 @@
             <version>1.18.30</version> <!-- Актуальная версия на момент ответа -->
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

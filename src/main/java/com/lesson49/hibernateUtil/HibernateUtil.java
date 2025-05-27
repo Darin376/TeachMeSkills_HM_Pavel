@@ -1,9 +1,9 @@
 package com.lesson49.hibernateUtil;
 
 
-import com.lesson49.entity.Bankuser;
-import com.lesson49.entity.User;
-import com.lesson49.entity.Usercard;
+import com.lesson49.entity.Grooup;
+import com.lesson49.entity.RecordBook;
+import com.lesson49.entity.Student;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -38,6 +38,7 @@ public class HibernateUtil {
     @Value("${hibernate.current_session_context_class}")
     private String currentSessionContextClass;
 
+
     @Bean
     public SessionFactory getSessionFactory() {
         try {
@@ -51,9 +52,9 @@ public class HibernateUtil {
             configuration.setProperty("hibernate.show_sql", showSql);
             configuration.setProperty("hibernate.current_session_context_class", currentSessionContextClass);
 
-            configuration.addAnnotatedClass(User.class);
-            configuration.addAnnotatedClass(Bankuser.class);
-            configuration.addAnnotatedClass(Usercard.class);
+            configuration.addAnnotatedClass(Grooup.class);
+            configuration.addAnnotatedClass(RecordBook.class);
+            configuration.addAnnotatedClass(Student.class);
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
